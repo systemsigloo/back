@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\AuthApiController;
+use App\Http\Controllers\RateController;
 
 Route::post('/login', [AuthApiController::class, 'login']);
 
@@ -15,6 +16,9 @@ Route::post('/pedidos', [PedidoController::class, 'store']);
 Route::get('/categorias', [CategoriaController::class, 'index']);
 Route::get('/productos', [ProductoController::class, 'index']);
 Route::get('/pedidos', [PedidoController::class, 'index']);
+
+Route::get('/rate', [RateController::class, 'getRateBCV']);
+
 
 
 Route::middleware('auth')->group(function () {
