@@ -10,5 +10,5 @@ class Rate extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['currency', 'rate'];
+    protected $fillable = ['currency', 'rate','status'];
 }

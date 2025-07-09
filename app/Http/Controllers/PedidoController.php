@@ -19,8 +19,12 @@ class PedidoController extends Controller
         $request->validate([
             'nombre' => 'required|string|max:255',
             'telefono' => 'required|string|max:20',
-            'comentarios' => 'nullable|string',
-            'total' => 'required|numeric',
+            'comentarios' => 'nullable|string',           
+            'total_usd' => 'nullable|numeric',
+            'total_bs' => 'nullable|numeric',
+            'rate' => 'nullable|numeric',
+            'comprobante' => 'nullable|image|max:2048', // max 2MB,
+            'metodoPago' => 'nullable|string',
             'productos' => 'required|array|min:1',
             'productos.*.producto_id' => 'required|integer',
             'productos.*.nombre' => 'required|string',
@@ -28,7 +32,10 @@ class PedidoController extends Controller
             'productos.*.precio_unitario' => 'required|numeric',
             'productos.*.subtotal' => 'required|numeric',
         ]);
-
+         $rutaImagen = null;
+        if ($request->hasFile('comprobante')) {
+            $rutaImagen = $request->file('comprobante')->store('comprobantes', 'public');
+        }
         DB::beginTransaction();
 
         try {
@@ -38,6 +45,11 @@ class PedidoController extends Controller
                 'telefono' => $request->telefono,
                 'comentarios' => $request->comentarios,
                 'total' => $request->total,
+                'total_usd' => $request->total_usd,
+                'total_bs' => $request->total_bs,
+                'tasa' => $request->rate,
+                'metodo_pago' => ($request->metodoPago == 'pagoMovil')?'p':'d',
+                'pago' => $rutaImagen,
                 'estatus' => 'pendiente',
             ]);
 
@@ -55,7 +67,8 @@ class PedidoController extends Controller
 
             DB::commit();
           //Mail::to('jesusgomezuribe@gmail.com')->send(new PedidoRecibido($request));
-          // Enviar correo
+          // Enviar correo  delivery.goodfriends072025@gmail.com
+        Mail::to('delivery.goodfriends072025@gmail.com')->send(new PedidoCreado($request));
         Mail::to('jesusgomezuribe@gmail.com')->send(new PedidoCreado($request));
             return response()->json([
                 'message' => 'Pedido guardado correctamente',
@@ -70,5 +83,5 @@ class PedidoController extends Controller
                 'error' => $e->getMessage()
             ], 500);
         }
-    }
+     }
 }
