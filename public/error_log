@@ -1,0 +1,117 @@
+[30-Jun-2025 01:32:45 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1017
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1017): ReflectionClass->__construct()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#14 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#15 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#16 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1019
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#14 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#15 {main}
+  thrown in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1019
+[30-Jun-2025 01:32:48 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1017
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1017): ReflectionClass->__construct()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#14 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#15 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#16 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1019
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#14 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#15 {main}
+  thrown in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1019
+[30-Jun-2025 01:32:50 UTC] PHP Fatal error:  Uncaught ReflectionException: Class "config" does not exist in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1017
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1017): ReflectionClass->__construct()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#14 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#15 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#16 {main}
+
+Next Illuminate\Contracts\Container\BindingResolutionException: Target class [config] does not exist. in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php:1019
+Stack trace:
+#0 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(890): Illuminate\Container\Container->build()
+#1 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#2 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(821): Illuminate\Foundation\Application->resolve()
+#3 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#4 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php(1653): Illuminate\Foundation\Application->make()
+#5 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(571): Illuminate\Container\Container->offsetGet()
+#6 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(625): Illuminate\Log\LogManager->getDefaultDriver()
+#7 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(125): Illuminate\Log\LogManager->parseDriver()
+#8 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Log/LogManager.php(699): Illuminate\Log\LogManager->driver()
+#9 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(379): Illuminate\Log\LogManager->error()
+#10 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Exceptions/Handler.php(342): Illuminate\Foundation\Exceptions\Handler->reportThrowable()
+#11 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(562): Illuminate\Foundation\Exceptions\Handler->report()
+#12 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(146): Illuminate\Foundation\Http\Kernel->reportException()
+#13 /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1219): Illuminate\Foundation\Http\Kernel->handle()
+#14 /home/restgood/public_html/back-end/public/index.php(20): Illuminate\Foundation\Application->handleRequest()
+#15 {main}
+  thrown in /home/restgood/public_html/back-end/vendor/laravel/framework/src/Illuminate/Container/Container.php on line 1019

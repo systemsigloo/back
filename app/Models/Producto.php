@@ -11,6 +11,11 @@ class Producto extends Model
         'precio',
         'descripcion',
         'categoria_id',
-        'imagen',
+        'imagen','org_id',
     ];
+
+    public function organization()
+    {
+        return $this->belongsTo(Org::class, 'org_id');
+    }
 }

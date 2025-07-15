@@ -12,11 +12,17 @@ class Pedido extends Model
                 'total_bs',
                 'tasa'  ,
                
-                'pago'
+                'pago','org_id',
     ];
 
     public function detalles()
     {
         return $this->hasMany(DetallePedido::class);
+    }
+
+    // Relación muchos a uno con Org
+    public function organization()
+    {
+        return $this->belongsTo(Org::class, 'org_id');
     }
 }

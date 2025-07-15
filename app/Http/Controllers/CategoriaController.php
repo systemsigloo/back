@@ -7,14 +7,20 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
     public function index()
-    {
-         $categorias = Categoria::where('status','1')->orderBy('nombre')->get();
+    {  $orgId = config('app.org_id');
+        if (!$orgId) {
+            abort(403, 'No se ha configurado una organización para este dominio.');
+        }
+         $categorias = Categoria::where('org_id',$orgId)->where('status','1')->orderBy('nombre')->get();
 
         return response()->json($categorias);
     }
 
      public function store(Request $request)
-    {
+    {  $orgId = config('app.org_id');
+        if (!$orgId) {
+            abort(403, 'No se ha configurado una organización para este dominio.');
+        }
         $request->validate([
             'nombre' => 'required|string|max:255',
             'status' => 'nullable|boolean',
@@ -23,6 +29,7 @@ class CategoriaController extends Controller
         $categoria = Categoria::create([
             'nombre' => $request->nombre,
             'status' => $request->status ?? 1,
+            'org_id' => $orgId,
         ]);
 
         return response()->json([

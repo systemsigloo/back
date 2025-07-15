@@ -17,7 +17,6 @@ Route::get('/productos', [ProductoController::class, 'index']);
 Route::get('/pedidos', [PedidoController::class, 'index']);
 
 
-
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return 'sdf';

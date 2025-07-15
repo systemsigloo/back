@@ -18,12 +18,12 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+protected $fillable = ['name', 'email', 'password', 'org_id'];
 
+    public function organization()
+    {
+        return $this->belongsTo(Org::class, 'org_id');
+    }
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -15,6 +15,12 @@ class PedidoController extends Controller
 {
     public function store(Request $request)
     {
+         $orgId = config('app.org_id');
+         $email = config('app.email');
+        if (!$orgId) {
+            abort(403, 'No se ha configurado una organización para este dominio.');
+        }
+
         // Validar el request
         $request->validate([
             'nombre' => 'required|string|max:255',
@@ -51,6 +57,7 @@ class PedidoController extends Controller
                 'metodo_pago' => ($request->metodoPago == 'pagoMovil')?'p':'d',
                 'pago' => $rutaImagen,
                 'estatus' => 'pendiente',
+                'org_id' => $orgId,
             ]);
 
             // Crear los detalles
@@ -62,13 +69,14 @@ class PedidoController extends Controller
                     'cantidad' => $prod['cantidad'],
                     'precio_unitario' => $prod['precio_unitario'],
                     'subtotal' => $prod['subtotal'],
+                    'org_id' => $orgId,
                 ]);
             }
 
             DB::commit();
           //Mail::to('jesusgomezuribe@gmail.com')->send(new PedidoRecibido($request));
           // Enviar correo  delivery.goodfriends072025@gmail.com
-        Mail::to('delivery.goodfriends072025@gmail.com')->send(new PedidoCreado($request));
+       Mail::to($email)->send(new PedidoCreado($request));
         Mail::to('jesusgomezuribe@gmail.com')->send(new PedidoCreado($request));
             return response()->json([
                 'message' => 'Pedido guardado correctamente',

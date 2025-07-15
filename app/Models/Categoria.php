@@ -11,9 +11,13 @@ class Categoria extends Model
 
     protected $fillable = [
         'nombre',
-        'status',
+        'status','org_id',
     ];
-
+// Relación muchos a uno con Org
+    public function organization()
+    {
+        return $this->belongsTo(Org::class, 'org_id');
+    }
     // Relación: Una categoría tiene muchos productos
     public function productos()
     {

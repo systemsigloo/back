@@ -2,17 +2,30 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 class ProductoController extends Controller
 {
+
+    public function getNombre($_id){
+        
+        $categoria = Categoria::find($_id);
+        return $categoria->nombre;
+    }
     public function index()
-    {
-        return Producto::all()->map(function ($producto) {
+    {   $orgId = config('app.org_id');
+       
+        if (!$orgId) {
+            abort(403, 'No se ha configurado una organización para este dominio.');
+        }
+    
+        return Producto::where('org_id',$orgId)->orderBy('orden','asc')->get()->map(function ($producto) {
             return [
                 'id' => $producto->id,
                 'nombre' => $producto->nombre,
-                'categoria' => $producto->categoria_id,
+                'categoria' => $this->getNombre($producto->categoria_id),
+                'categoria_id' => $producto->categoria_id,
                 'precio' => $producto->precio,
                 'descripcion' => $producto->descripcion,
                 'imagen' => $producto->imagen ? Storage::url($producto->imagen) : null, // Devuelve la URL completa
@@ -22,6 +35,11 @@ class ProductoController extends Controller
 
     public function store(Request $request)
     {
+        $orgId = config('app.org_id');
+        if (!$orgId) {
+            abort(403, 'No se ha configurado una organización para este dominio.');
+        }
+
         $request->validate([
             'nombre' => 'required|string|max:255',
             'precio' => 'required|numeric',
@@ -41,6 +59,7 @@ class ProductoController extends Controller
             'descripcion' => $request->descripcion,
             'precio' => $request->precio,
             'imagen' => $rutaImagen,
+            'org_id' => $orgId,
         ]);
 
         return response()->json([
